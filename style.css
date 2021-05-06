@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to right, #9d4edd, #e0aaff);
+}
+
+#calculator {
+  width: 320px;
+  height: 550px;
+  background-color: #10002b;
+  border-radius: 20px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#result {
+  height: 150px;
+}
+
+#keyboard {
+  height: 500px;
+}
+
+#history {
+  text-align: right;
+  height: 20px;
+  margin: 0 20px;
+  padding-top: 20px;
+  color: #e5e5e5;
+}
+#output {
+  text-align: right;
+  height: 60px;
+  margin: 10px 20px;
+  font-size: 30px;
+  padding-top: 20px;
+  color: #f8edeb;
+}
+#output-text {
+  width: 250px;
+  height: 120px;
+  float: left;
+}
+#microphone {
+  height: 30px;
+  width: 30px;
+  float: right;
+  background-image: url(mic2.png);
+  background-size: 100% 100%;
+  border-radius: 50%;
+  margin: 20px;
+  margin-top: 85px;
+  cursor: pointer;
+}
+.record {
+  animation: microphone-animation 1.5s infinite;
+}
+@keyframes microphone-animation {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 148, 255, 0.4);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0px rgba(0, 148, 255, 0);
+  }
+}
+.tooltip {
+  width: 200px;
+  font-size: 11px;
+  position: absolute;
+  background-color: #c8b6ff;
+  color: #10002b;
+  padding: 10px;
+  top: 80px;
+  transform: translateX(50px);
+  border-radius: 10px;
+  visibility: hidden;
+}
+.tooltip::before {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #c8b6ff transparent transparent; /*this makes a triangle from square */
+  left: 0;
+  margin-left: -10px;
+}
+#output-microphone:hover .tooltip {
+  visibility: visible;
+}
+.operator,
+.empty,
+.number {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  float: left;
+  border-radius: 50%;
+  border-width: 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+.number {
+  background-color: #c8b6ff;
+}
+.empty {
+  background-color: #10002b;
+}
+.number,
+.operator {
+  cursor: pointer;
+}
+.operator:active,
+.number:active {
+  font-size: 17px;
+}
+button:nth-child(4) {
+  font-size: 20px;
+  background-color: #06d6a0;
+}
+button:nth-child(8) {
+  font-size: 20px;
+  background-color: #fca311;
+}
+button:nth-child(12) {
+  font-size: 20px;
+  background-color: #ef476f;
+}
+button:nth-child(16) {
+  font-size: 20px;
+  background-color: #2a9daf;
+}
+button:nth-child(20) {
+  font-size: 20px;
+  background-color: #9b5de5;
+}
+button:nth-child(1) {
+  font-size: 20px;
+  background-color: #dbcdf0;
+}
+button:nth-child(2) {
+  font-size: 20px;
+  background-color: #dbcdf0;
+}
+button:nth-child(3) {
+  font-size: 20px;
+  background-color: #dbcdf0;
+}
